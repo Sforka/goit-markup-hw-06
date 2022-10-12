@@ -2,6 +2,7 @@
   --color-black-text: #000000;
   --color-white-text: #ffffff;
   --color-active-link: #2196f3;
+  --color-active-button: #188ce8;
   --color-nav-text: #212121;
   --color-contact-text: #757575;
   --color-title-text: #212121;
@@ -173,7 +174,6 @@ img {
 .contacts-link:focus {
   color: var(--color-active-link);
 }
-
 
 .contacts-link:hover .contacts-icon,
 .contacts-link:focus .contacts-icon {
@@ -545,19 +545,18 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 
   padding: 40px;
 }
 .modal-title {
   margin-bottom: 12px;
-font-weight: 700;
-font-size: 20px;
-line-height: 1.15;
-text-align: center;
-letter-spacing: 0.03em;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
 
-color: var(--color-title-text);
+  color: var(--color-title-text);
 }
 
 .modal-user-info {
@@ -566,17 +565,13 @@ color: var(--color-title-text);
 }
 
 .modal-user-info label {
-margin-bottom: 4px;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
 
-  
-font-weight: 400;
-font-size: 12px;
-line-height: 1.16;
-/* identical to box height */
-
-letter-spacing: 0.01em;
-
-color: var(--color-contact-text);
+  color: var(--color-contact-text);
 }
 .modal-box {
   position: relative;
@@ -588,16 +583,21 @@ color: var(--color-contact-text);
   width: 18px;
   height: 18px;
   top: 50%;
-  left: 22px;
-  transform: translate(-50%,-50%);
-  
+  left: 11px;
+  transform: translateY(-50%);
+
+  transition: fill var(--animation-delay);
 }
-.modal-user-info input {
-  padding-left: 40px;
+.modal-input {
+  padding-left: 42px;
   width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-border-radius: 4px;
+  border-radius: 4px;
+
+  outline: transparent;
+
+  transition: border var(--animation-delay), outline var(--animation-delay);
 }
 
 .modal-comments {
@@ -609,56 +609,58 @@ border-radius: 4px;
   margin-bottom: 4px;
 }
 textarea {
-width: 100%;
-height: 120px;
+  width: 100%;
+  height: 120px;
 
-resize: none;
+  resize: none;
 
-padding: 10px;
+  padding: 10px;
 
-border: 1px solid rgba(33, 33, 33, 0.2);
-border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: transparent;
+
+  transition: border var(--animation-delay), outline var(--animation-delay);
 }
 
 textarea::placeholder {
-font-weight: 400;
-font-size: 12px;
-line-height: 1.16;
-letter-spacing: 0.01em;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
 
-color: rgba(117, 117, 117, 0.5);
+  color: rgba(117, 117, 117, 0.5);
 
-margin-bottom: 20px;
-
+  margin-bottom: 20px;
 }
 
-.modal-box input:hover,
-.modal-box input:focus,
+.modal-input:hover,
+.modal-input:focus,
 .modal textarea:hover,
 .modal textarea:focus {
   outline: 1px solid var(--color-active-link);
   border: 1px solid var(--color-active-link);
 }
 
-.modal-box:hover .modal-info-icon,
-.modal-box:focus .modal-info-icon{
-fill: var(--color-active-link);
+.modal-input:hover + .modal-info-icon,
+.modal-input:focus + .modal-info-icon {
+  fill: var(--color-active-link);
 }
 .modal-agreement {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  
 }
 .modal-agreement label {
-font-weight: 400;
-font-size: 14px;
-line-height: 1.71;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
 
-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
 
-color: #757575;
+  color: var(--color-contact-text);
 }
 
 .modal-agreement input {
@@ -669,22 +671,30 @@ color: #757575;
 }
 
 .modal-submit-button {
-width: 200px;
-height: 50px;
+  width: 200px;
+  height: 50px;
 
-background: #2196F3;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border: 1px solid #2196F3;
-border-radius: 4px;
+  background-color: var(--color-active-link);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-active-link);
+  border-radius: 4px;
 
-font-weight: 700;
-font-size: 16px;
-line-height: 30px;
-text-align: center;
-letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
 
-color: #FFFFFF;
-cursor: pointer;
+  color: var(--color-white-text);
+  cursor: pointer;
+
+  transition: background-color var(--animation-delay),
+    box-shadow var(--animation-delay);
+}
+
+.modal-submit-button:hover,
+.modal-submit-button:focus {
+  background-color: var(--color-active-button);
 }
 
 /* -------------------footer----------------- */
@@ -798,84 +808,83 @@ cursor: pointer;
 }
 
 .footer-email-title {
-margin-bottom: 20px;
-font-weight: 700;
-font-size: 14px;
-line-height: 1.14;
-letter-spacing: 0.03em;
-text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 
-color: var(--color-white-text);
-
+  color: var(--color-white-text);
 }
 .footer-email-box {
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .footer-email-box input {
-width: 350px;
-height: 50px;
-margin-right: 12px;
-padding: 16px;
+  width: 350px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 16px;
 
-background-color: transparent;
+  background-color: transparent;
 
-border: 1px solid rgba(255, 255, 255, 0.3);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
 
-font-weight: 400;
-font-size: 16px;
-line-height: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 
-align-items: center;
-letter-spacing: 0.03em;
+  align-items: center;
+  letter-spacing: 0.03em;
 
-color: var(--color-white-text);
+  color: var(--color-white-text);
+  outline: transparent;
+
+  transition: border var(--animation-delay), outline var(--animation-delay);
 }
 .footer-email-box input:focus,
-.footer-email-box input:focus-visible,
 .footer-email-box input:hover {
-border: 1px solid var(--color-active-link);
-outline: 2px solid transparent;
-
-
+  border: 1px solid var(--color-active-link);
+  outline: 2px solid var(--color-active-link);
 }
 .footer-email-box input::placeholder {
-font-weight: 400;
-font-size: 16px;
-line-height: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 
-align-items: center;
-letter-spacing: 0.03em;
+  align-items: center;
+  letter-spacing: 0.03em;
 
-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-email-button {
-width: 200px;
-height: 50px;
+  width: 200px;
+  height: 50px;
 
-background: var(--color-background-hero-button);
-border: 1px solid var(--color-active-link);
-border-radius: 4px;
+  background: var(--color-active-link);
+  border: 1px solid var(--color-active-link);
+  border-radius: 4px;
 
-font-weight: 700;
-font-size: 16px;
-line-height: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
 
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-letter-spacing: 0.06em;
+  letter-spacing: 0.06em;
 
-color: var(--color-white-text);
-cursor: pointer;
+  color: var(--color-white-text);
+  cursor: pointer;
 
-transition: background-color var(--animation-delay),
-box-shadow var(--animation-delay);
+  transition: background-color var(--animation-delay),
+    box-shadow var(--animation-delay);
 }
 
 .footer-email-icon {
@@ -885,11 +894,9 @@ box-shadow var(--animation-delay);
 
 .footer-email-button:hover,
 .footer-email-button:focus {
-background-color: var(--color-active-link);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); 
-
+  background-color: var(--color-active-button);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-
 
 /* -----------------------portfolio------------------- */
 .portfolio-header {
@@ -926,7 +933,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 
   transition: color var(--animation-delay),
-  background-color var(--animation-delay), box-shadow var(--animation-delay);
+    background-color var(--animation-delay), box-shadow var(--animation-delay);
 }
 
 .filters-button:hover,
