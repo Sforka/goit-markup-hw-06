@@ -494,6 +494,7 @@ img {
 .modal {
   width: 528px;
   min-height: 581px;
+  padding: 40px;
   background-color: var(--color-background-white);
   position: absolute;
   top: 50%;
@@ -547,7 +548,6 @@ img {
   padding: 40px;
 }
 .modal-title {
-  margin-top: 40px;
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
@@ -564,8 +564,7 @@ img {
 }
 
 .modal-box {
-  margin-right: 40px;
-  margin-left: 40px;
+  position: relative;
 
   font-weight: 400;
   font-size: 12px;
@@ -575,19 +574,17 @@ img {
   color: var(--color-contact-text);
 }
 
-.modal-input-box {
-  position: relative;
-}
 .modal-info-icon {
   position: absolute;
   fill: var(--color-nav-text);
-  top: 50%;
+  top: 60%;
   left: 11px;
   transform: translateY(-60%);
 
   transition: fill var(--animation-delay);
 }
 .modal-input {
+  position: relative;
   margin-top: 4px;
   margin-bottom: 10px;
   padding-left: 42px;
@@ -602,7 +599,9 @@ img {
 }
 
 textarea {
+  display: block;
   margin-top: 4px;
+  margin-bottom: 20px;
   width: 100%;
   height: 120px;
   resize: none;
@@ -620,8 +619,6 @@ textarea::placeholder {
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
-
-  margin-bottom: 20px;
 }
 
 .modal-input:hover,
@@ -641,11 +638,10 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
   margin-bottom: 30px;
   gap: 9px;
 
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -654,7 +650,6 @@ textarea::placeholder {
   letter-spacing: 0.03em;
 
   color: var(--color-contact-text);
-  
 }
 .agreement-checkbox {
   position: absolute;
@@ -665,14 +660,13 @@ textarea::placeholder {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-
 }
 
 .modal-icon-check {
   display: inline-block;
   width: 16px;
   height: 15px;
-  
+
   background-image: url(../image/icon-check.svg);
   background-origin: border-box;
   border: 2px solid var(--color-black-text);
@@ -686,15 +680,14 @@ textarea::placeholder {
 
 .agreement-link {
   color: var(--color-active-link);
-  text-decoration: line solid;
-  border-bottom: 2px solid var(--color-active-link);
 }
 
 .modal-submit-button {
   width: 200px;
   height: 50px;
 
-  margin-left: 165px;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: var(--color-active-link);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -943,17 +936,13 @@ textarea::placeholder {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
-
   text-align: center;
   letter-spacing: 0.03em;
-
   border: none;
   color: var(--color-nav-text);
-
   background: var(--color-background-filters-button);
   border-radius: 4px;
   cursor: pointer;
-
   transition: color var(--animation-delay),
     background-color var(--animation-delay), box-shadow var(--animation-delay);
 }
@@ -999,7 +988,6 @@ textarea::placeholder {
   top: 0;
   transition: transform var(--animation-delay);
   transform: translatey(100%);
-
   padding: 63px 24px;
 
   font-family: "Roboto";
@@ -1007,9 +995,7 @@ textarea::placeholder {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
-
   letter-spacing: 0.03em;
-
   color: #ffffff;
 }
 
@@ -1034,17 +1020,13 @@ textarea::placeholder {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
-
   letter-spacing: 0.06em;
-
   color: var(--color-nav-text);
 }
 
 .projects-text {
   font-size: 16px;
   line-height: 1.87;
-
   letter-spacing: 0.03em;
-
   color: var(--color-main-text);
 }
